@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   
   resources :articles
   
+  resources :contacts
+  
   root to: 'pages#index'
 
   get 'pages/contact'
