@@ -1,3 +1,4 @@
 git add -A
-git commit -m "added view partials for comments"
-git push origin comments
+git commit -m ""
+git push origin master
+git push heroku master
