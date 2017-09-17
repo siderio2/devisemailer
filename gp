@@ -1,4 +1,4 @@
 git add -A
-git commit -m "changed devise conf: email_from"
+git commit -m ""
 git push origin master
 git push heroku master
