@@ -1,3 +1,3 @@
 git add -A
-git commit -m "comment controller finished"
+git commit -m "added view partials for comments"
 git push origin comments
