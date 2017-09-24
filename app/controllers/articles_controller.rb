@@ -1,11 +1,18 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :check_authorship, only: [:edit, :destroy]
+  
+  def check_authorship
+    if current_user != Article.find(params[:id]).user
+      redirect_to article_path, alert: 'Only the author can edit/delete the article.'
+    end
+  end
 
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all.paginate(page: params[:page], per_page: 3)
+    @articles = Article.all.paginate(page: params[:page], per_page: 3 )
     @last5 = Article.last(5)
   end
 
